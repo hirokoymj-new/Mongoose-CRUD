@@ -1,17 +1,19 @@
 # Mongoose CRUD
 
-# Table of Contents
-1. [Create](#Create)
-2. [Read](#Read)
-  1.[Querying documents](#querying-documents)
-  2.[Count](#count)
-  3.[Regular Expression](#query---regular-expression) 
-  3.[Comparison Operators](#query---comparison-operators) 
-  4.[Pagination](#query---pagination)
-5. [Update](#Update)
-  1.[Query first](#updating-a-document-query-first)
-  2.[findByIdAndUpdate](#findbyidandupdate)
-6. [Delete](#Delete)
+- [Mongoose CRUD](#mongoose-crud)
+  - [Create](#create)
+  - [Read](#read)
+      - [Querying documents](#querying-documents)
+      - [Count](#count)
+      - [Query - Regular Expression](#query---regular-expression)
+      - [Query - Comparison Operators](#query---comparison-operators)
+      - [Query - Pagination](#query---pagination)
+  - [Update](#update)
+      - [Updating a document (query first)](#updating-a-document-query-first)
+      - [findByIdAndUpdate](#findbyidandupdate)
+  - [Delete](#delete)
+      - [Delete one document](#delete-one-document)
+  - [References:](#references)
 
 
 ## Create
