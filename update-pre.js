@@ -12,7 +12,6 @@ const counterSchema = new mongoose.Schema({
 });
 const Counter = mongoose.model('Counter', counterSchema);
 
-
 const employeeSchema = mongoose.Schema({
   name: {type: String},
   eid: {type: String}
@@ -30,7 +29,6 @@ employeeSchema.pre('save', function(next) {
         next();
       });
 });
-
 
 async function createEmployee(){
   const employee = new Employee({

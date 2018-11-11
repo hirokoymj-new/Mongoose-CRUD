@@ -11,6 +11,7 @@
   - [Update](#update)
       - [Updating a document (query first)](#updating-a-document-query-first)
       - [findByIdAndUpdate](#findbyidandupdate)
+      - [auto increment](#auto-increment)
   - [Delete](#delete)
       - [Delete one document](#delete-one-document)
   - [References:](#references)
@@ -173,6 +174,37 @@ async function updateCounter() {
     });
   } 
 ```
+
+#### auto increment 
+- [pre](https://mongoosejs.com/docs/middleware.html#pre)
+- [findByIdAndUpdate](https://mongoosejs.com/docs/api.html#model_Model.findByIdAndUpdate)
+- [$inc](https://docs.mongodb.com/manual/reference/operator/update-field/)
+```js
+const counterSchema = new mongoose.Schema({
+  _id: {type: String, required: true},
+  seq: { type: Number, default: 0 }
+});
+const Counter = mongoose.model('Counter', counterSchema);
+
+const employeeSchema = mongoose.Schema({
+  name: {type: String},
+  eid: {type: String}
+});
+const Employee = mongoose.model('Employee', employeeSchema);
+
+employeeSchema.pre('save', function(next) {
+  var doc = this;
+    const counter = Counter.findByIdAndUpdate(
+      {_id:'entityId'},
+      {$inc: {seq:1}},
+      {new: true, upsert:true }, function(err, counter){ 
+        if(err) return next(error);
+        doc.eid = counter.seq;
+        next();
+      });
+});
+```
+
 
 ## Delete
 
