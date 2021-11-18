@@ -222,3 +222,23 @@ async function deleteCourse(id){
 - [Document.prototype.save()](https://mongoosejs.com/docs/api.html#document_Document-save)
 - [Mongoose Queries](https://mongoosejs.com/docs/queries.html)
 - [Model.count()](https://mongoosejs.com/docs/api.html#model_Model.count)
+
+
+
+.prettierrc.js
+
+module.exports = {
+  arrowParens: 'always',
+  bracketSpacing: true,
+  jsxSingleQuote: false,
+  jsxBracketSameLine: false,
+  printWidth: 120,
+  semi: false,
+  singleQuote: true,
+  tabWidth: 2,
+  trailingComma: 'es5',
+  useTabs: false,
+}
+.prettierignore
+package.json
+node_modules
